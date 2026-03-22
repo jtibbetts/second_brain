@@ -17,13 +17,3 @@ def configure_logging():
     logger.remove()
     logger.add(sys.stderr, level=log_level)
     logger.add(log_file, level="DEBUG", rotation="50 KB", retention=1)
-
-
-@logger.catch
-def main():
-    """Run the application.
-
-    Configures logging and prints a greeting to verify the setup works.
-    """
-    configure_logging()
-    logger.info("Hello from second_brain!")
